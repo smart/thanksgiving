@@ -1,0 +1,10 @@
+.top
+  %h1 What are you thankful for?
+
+.share
+  .twitter
+    =link_to( image_tag('twitter.png') + "Share on Twitter", "http://twitter.com/home?status=I'm thankful for #{current_object.message}.  Share your thanks here: #{SHARE_URL}")
+  .facebook 
+    =link_to( image_tag('twitter.png') + "Share on Facebook", "http://www.facebook.com/sharer.php?t=I'm thankful for #{current_object.message}.  Share your thanks here: #{SHARE_URL}")
+.thanks
+  = render :partial => 'thank', :collection => current_objects

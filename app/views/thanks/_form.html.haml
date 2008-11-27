@@ -1,0 +1,12 @@
+- form_for(:thank, :url => thanks_path, :html => {:multipart => true } ) do |f|
+  %p
+    %label{:for => "name"}
+      Name or Twitter username 
+    = f.text_field :name
+
+  %p
+    %label{:for => "message"}
+      Message
+    = f.text_field :message
+
+  = f.submit "Create Asset"

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="keywords" content="Sympact, Sympact Technologies, Ruby, Rails, Ruby on Rails, Engine Yard, Stand For, Stand For Us, Dynamic Images, ADIs, Programming, Widgets, Email, E-Mail, email, Dynamic Email, Targeting, Tailored Advertising, Render, Fandango, 1-800-Flowers.com, Twitter, Geo Location" />
+  <meta name="description" content="Sympact Technologies provides tailored advertising solutions for email, mobile and display marketing. Our dynamic image platform enables customers to build rich tailored email campaigns that easily integrate into existing email infrastructure and increase campaign effectiveness.  Visit our site to find out more about how Sympact can take your advertising to the edge." />
+  <link REL="SHORTCUT ICON" HREF="/images/favicon.ico?awesome">
+  <title>What are you thankful for?</title>
+
+  <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag :defaults %>
+  
+  <%= yield :head %>
+</head>
+
+<body>
+  <div id="container">
+    
+    <div id="header"> 
+	  <% content_for :header do %>
+	    <%= render :partial => "shared/header" %>
+      <% end %>
+    </div>
+    
+    <div id="wrapper">
+	
+      <div id="primary">
+        <%# get_flash %>
+        <%= yield %>
+      </div>
+      <div id="secondary">
+	
+        <% content_for :secondary do %>
+          <%= render :partial => 'shared/sidebar' %>
+        <% end %>
+      </div>
+
+    </div>
+ 
+    <div id="footer">
+	  <% content_for :footer do %>
+        <%= render :partial => "shared/footer" %>
+      <% end %>
+    </div>
+    
+  </div>
+  
+</body>
+</html>
+ 

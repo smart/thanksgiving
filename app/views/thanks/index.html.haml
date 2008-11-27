@@ -1,0 +1,8 @@
+.top
+  %h1 What are you thankful for?
+
+.form 
+  = render :partial => 'thanks/form'
+  
+.thanks
+  = render :partial => 'thank', :collection => current_objects
